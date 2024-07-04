@@ -1,26 +1,30 @@
 const y = 20; // 수통의 높이 (cm 단위)
+// css에도 수동으로 20 설정해놓았으니 변경이 필요합니다.
 const x = 15; // 센서의 높이 (cm 단위)
 
 // API에서 데이터를 받아와 물 높이를 업데이트하는 함수
 async function updateWaterLevel() {
   try {
-    const response = await fetch('https://api.example.com/water-level'); // 실제 API URL로 변경하세요
+    const response = await fetch("https://api.example.com/water-level"); // 실제 API URL로 변경하세요
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error("Network response was not ok");
     }
     const data = await response.json();
     const z = data.distance; // 센서가 측정한 물과의 거리 (cm 단위)
-    
+
     // 실제 물 높이 (cm 단위)
     const actualWaterHeight = x - z;
 
     // 물 높이를 퍼센트로 계산
-    const waterLevel = Math.max(0, Math.min(100, (actualWaterHeight / y) * 100));
+    const waterLevel = Math.max(
+      0,
+      Math.min(100, (actualWaterHeight / y) * 100)
+    );
 
     // 물 높이를 퍼센트로 계산하여 설정합니다.
     const water = document.getElementById("water");
     const waterLevelDisplay = document.getElementById("waterLevelDisplay");
-    
+
     water.style.height = `${waterLevel}%`;
     waterLevelDisplay.textContent = Math.round(waterLevel);
   } catch (error) {
