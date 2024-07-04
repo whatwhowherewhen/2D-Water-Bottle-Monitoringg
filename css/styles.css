@@ -13,8 +13,8 @@ body {
 }
 
 .water-bottle {
-  width: 10cm;
-  height: 20cm; /* 수통의 높이를 20cm로 가정 */
+  width: 50px; /* 수통의 너비 (픽셀 단위) */
+  height: 200px; /* 수통의 높이를 200px로 가정 (20cm * 10) */
   border: 2px solid #000;
   border-radius: 10px;
   overflow: hidden;

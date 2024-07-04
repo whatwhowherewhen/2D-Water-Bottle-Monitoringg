@@ -1,6 +1,6 @@
-const y = 20; // 수통의 높이 (cm 단위)
-// css에도 수동으로 20 설정해놓았으니 변경이 필요합니다.
-const x = 15; // 센서의 높이 (cm 단위)
+const y = 20; // 수통의 실제 높이 (cm 단위)
+const x = 15; // 센서의 실제 높이 (cm 단위)
+const scale = 10; // 1cm를 10px로 변환
 
 // API에서 데이터를 받아와 물 높이를 업데이트하는 함수
 async function updateWaterLevel() {
@@ -39,11 +39,11 @@ setInterval(updateWaterLevel, 5000); // 5초마다 업데이트
 updateWaterLevel();
 
 /*(테스트용)
+const y = 20; // 수통의 실제 높이 (cm 단위)
+const x = 15; // 센서의 실제 높이 (cm 단위)
+const scale = 10; // 1cm를 10px로 변환
 
-const y = 20; // 수통의 높이 (cm 단위)
-const x = 15; // 센서의 높이 (cm 단위)
-
-// 임의의 데이터를 제공하는 함수 
+// 임의의 데이터를 제공하는 함수 (테스트용)
 function mockFetch() {
   return new Promise((resolve) => {
     setTimeout(() => {
