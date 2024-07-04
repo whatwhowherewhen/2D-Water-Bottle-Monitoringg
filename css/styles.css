@@ -15,7 +15,7 @@ body {
 
 .water-bottle {
   width: 100px;
-  height: 200px;
+  height: 200px; /* 수통의 높이 y를 200px로 가정 */
   border: 2px solid #000;
   border-radius: 10px;
   overflow: hidden;
