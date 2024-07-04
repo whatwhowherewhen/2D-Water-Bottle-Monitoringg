@@ -1,5 +1,6 @@
 const y = 20; // 수통의 실제 높이 (cm 단위)
 const x = 15; // 센서의 실제 높이 (cm 단위)
+//css water-bottle에 수동으로 설정하여서 변경시 css 변경도 필요합니다.
 const scale = 10; // 1cm를 10px로 변환
 
 // API에서 데이터를 받아와 물 높이를 업데이트하는 함수
